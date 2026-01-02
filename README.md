@@ -190,6 +190,201 @@ MIT License - feel free to use, modify, and distribute!
 
 <div align="center">
 
+---
+
+# 💻 VERSION 2: Windows Desktop Application
+
+> **NEW!** Standalone desktop app for Windows 10/11 - No browser required!
+
+## 🆕 What's New in V2?
+
+Version 2 takes Mindful Browse beyond the browser with a **system-level productivity companion**:
+
+- 📍 **System Tray App** - Runs quietly in background
+- 👁️ **Window Monitoring** - Tracks ANY application (YouTube, social media apps, games)
+- 🔔 **Windows Notifications** - Native toast notifications
+- 💬 **AI Chat Window** - PyQt6 interface for conversations
+- ⚙️ **Fully Customizable** - config.yaml for your workflow
+- 🚀 **Auto-start** - Launch with Windows
+- 🧱 **Minimal Resources** - ~20MB RAM, <1% CPU
+
+## 📦 Desktop App Features
+
+### 📊 Core Monitoring
+- Monitors active window titles using Win32 API
+- Detects distracting apps across ALL windows:
+  - Browser: YouTube, Twitter, Reddit, etc.
+  - Desktop Apps: Steam, Discord, games
+  - Custom keywords you define
+
+### 🔔 Smart Notifications
+- Windows 10/11 native toast notifications
+- Cooldown system (10min default) prevents spam
+- Click notification to open AI chat
+
+### 🤖 AI Integration
+- Same multi-model support (Gemini, OpenAI, Claude)
+- Professional PyQt6 chat interface
+- Always-on-top option for focus
+- Conversation history
+
+## 🛐️ Technical Stack
+
+```
+Python 3.10+
+├── pywin32          # Windows API access
+├── pystray          # System tray integration
+├── PyQt6            # Modern UI framework
+├── win11toast       # Native notifications
+├── PyYAML           # Configuration
+└── PyInstaller      # .exe packaging
+```
+
+## 📝 File Structure
+
+```
+desktop-app/
+├── main.py                  # Entry point & system tray
+├── window_monitor.py        # Active window detection
+├── notification_system.py   # Toast notifications
+├── ai_chat_window.py        # PyQt6 chat UI
+├── ai_service.py            # Multi-AI provider handler
+├── config.yaml              # User settings
+├── requirements.txt         # Python dependencies
+├── build_exe.py             # PyInstaller configuration
+├── icons/
+│   └── tray_icon.ico
+└── README_DESKTOP.md        # Desktop-specific docs
+```
+
+## 🚀 Installation (Desktop Version)
+
+### Option 1: Download .exe (Coming Soon)
+```bash
+# Download from releases
+# Run MindfulBrowse.exe
+# Configure in system tray
+```
+
+### Option 2: From Source
+```bash
+# Clone repository
+git clone https://github.com/lozturner/mindful-browse-extension.git
+cd mindful-browse-extension/desktop-app
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run app
+python main.py
+```
+
+### Option 3: Build Your Own .exe
+```bash
+python build_exe.py
+# Executable will be in dist/ folder
+```
+
+## ⚙️ Configuration
+
+Edit `config.yaml` to customize:
+
+```yaml
+app_settings:
+  check_interval_seconds: 5
+  notification_cooldown_minutes: 10
+  autostart: true
+
+distractions:
+  keywords:
+    - "YouTube"
+    - "Netflix"
+    - "Facebook"
+    - "Twitter"
+    - "Reddit"
+    - "Instagram"
+    - "Steam"
+    - "Discord"
+    # Add your own!
+
+ai_config:
+  provider: "openai"  # or "gemini" or "claude"
+  api_key: "YOUR_API_KEY_HERE"
+  system_prompt: "You are a supportive productivity coach."
+```
+
+## 🔄 Version Comparison
+
+| Feature | Version 1 (Browser) | Version 2 (Desktop) |
+|---------|-------------------|--------------------|
+| **Platform** | Chrome/Edge Extension | Windows App |
+| **Monitoring** | Browser tabs only | All applications |
+| **Installation** | Load unpacked | .exe installer |
+| **Resources** | Per-tab | ~20MB total |
+| **Scope** | Web browsing | System-wide |
+| **Auto-start** | With browser | With Windows |
+
+## 🔗 AI Development Process (V2)
+
+Version 2 was also created through **collaborative AI development**:
+
+### 🤖 AI Contributors (Version 2):
+
+1. **🟢 Google AI Studio** - Complete Python desktop architecture
+   - [View V2 Chat](https://aistudio.google.com/prompts/1et2dLzyxsQv9ytOJ4XOvUY8M8IlC06Ii)
+
+2. **🔵 Gemini Pro Mode** - Advanced PyQt6 implementation  
+   - [View V2 Chat](https://gemini.google.com/app/778bc151ea72be76)
+
+3. **🟼 Perplexity AI** - Windows API best practices
+   - [View V2 Research](https://www.perplexity.ai/search/i-m-going-to-make-a-new-really-oHXhq.CXTeC6PWvpd7rgAw)
+
+## 📚 Learn More
+
+- [Desktop App Documentation](./desktop-app/README_DESKTOP.md)
+- [Complete Source Code](./desktop-app/)
+- [Building from Source Guide](./desktop-app/BUILD.md)
+
+## 🔐 Security Notes (Desktop Version)
+
+- Runs with standard user permissions (no admin required)
+- API keys stored in local config.yaml (never transmitted except to AI providers)
+- Window title monitoring only (no screenshots or keylogging)
+- Open source - audit the code yourself
+- No telemetry or data collection
+
+## 🤝 Which Version Should I Use?
+
+**Choose Version 1 (Browser Extension) if:**
+- You only need browser intervention
+- You want zero installation hassle
+- You use multiple browsers
+
+**Choose Version 2 (Desktop App) if:**
+- You want system-wide monitoring
+- You use desktop apps (Steam, Discord, etc.)
+- You want one tool for everything
+- You're on Windows 10/11
+
+**Use Both!** They complement each other perfectly! 🚀
+
+---
+
+## 💬 Version History
+
+### Version 2.0 (January 2026)
+- ✨ Windows desktop application
+- System-wide window monitoring
+- Native Windows notifications  
+- PyQt6 chat interface
+- PyInstaller packaging
+
+### Version 1.0 (January 2026)
+- 🎉 Initial browser extension release
+- Chrome/Edge Manifest V3
+- Multi-AI provider support
+- Supportive intervention UI
+
 **Built with 💚 by humans and AI, for humans**
 
 *Because productivity isn't about restriction—it's about support*
